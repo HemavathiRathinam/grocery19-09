@@ -1,0 +1,15 @@
+div.card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div.card{
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+.im{
+    background-image: url("https://images.pexels.com/photos/95425/pexels-photo-95425.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+}

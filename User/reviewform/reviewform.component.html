@@ -1,0 +1,25 @@
+<app-user-nav></app-user-nav>
+<body >
+    <div class="form">
+        <form #addForm="ngForm" (ngSubmit)="onAddReview(addForm)">
+            <h3>DROP YOUR REVIEWS HERE<img src="https://t3.ftcdn.net/jpg/03/94/20/92/240_F_394209222_DXgjy9uxZkGrzPlGHBTQrxmYcLz0K3DO.jpg" style="width: 100px;height: 80px;"></h3><br>
+            <table style="margin-left: 100px;">
+            <tr class="id1">
+                <td>Name:</td>  
+                <td><input  readonly class="form-control" [(ngModel)]="this.usernam" name="name" id="image" placeholder="Enter Product Weight"></td>
+            </tr>
+            <tr class="id1" >
+            <td >Feedback:</td>
+            <td><textarea type="text" ngModel name="feedback" id="feedback" placeholder="Enter Your Feedback"  ></textarea></td>
+            </tr>
+            <tr class="id1">
+            <td> Rating:</td>  
+            <td><input type="number" ngModel name="rating" id="rating" placeholder="Enter Your Rating" min='0' max='10'></td>
+            </tr> 
+            </table><br>
+            <button  [disabled]="addForm.invalid" type="submit"  class="btn" id="btn" >Submit</button>
+        </form>
+    </div>
+</body>
+
+

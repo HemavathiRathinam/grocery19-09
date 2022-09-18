@@ -1,0 +1,76 @@
+<app-admin-nav></app-admin-nav>
+
+  <div id="total" style="font-weight: bold;font-size:large;text-align: center;padding-top: 60px;">Total Orders:&nbsp;&nbsp;{{ totalRows }}</div><br>
+
+  
+  <div id="main-container">
+    <table class="center">
+      <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Order Date</th>
+            <th>Total amount</th>
+            <th>Order items</th>
+          </tr>
+      </thead>
+      
+      <tr *ngFor="let u of orderdetails" >
+        <td>{{u.id}}</td>
+         <td>{{u.username}}</td>
+         <td>{{u.userEmail}}</td>
+         <td>{{u.orderDate}}</td>
+         <td>Rs.{{u.amount}}</td>
+         <td *ngFor ="let x of u.addToCartModel_new">
+          <h2>{{x.cartId}}</h2>
+         </td>
+         <td> <button class="btn btn-outline-info my-2 my-sm-0" type="button" (click)="openPopup()">Display Products</button>
+         </td>
+         
+         
+  
+     </tr> 
+    </table>
+  </div>
+
+<!-- showing products popup -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}"
+id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel" style="color:rgb(116, 13, 156);font-weight: bold;">UPDATE PRODUCT</h5>
+      <img src="https://t3.ftcdn.net/jpg/04/37/51/90/240_F_437519066_OLrSfrnBk5hioGeje96IZ0ejr8Xrozw3.jpg" (click)="close()" style="width: 20px;">
+    </div>
+     <!-- Shopping cart table -->
+     <div class="table-responsive">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col" class="border-0 bg-light">
+          </th>
+          <th scope="col" class="border-0 bg-light">
+            <div class="p-2 px-3 text-uppercase"><h5 style="font-family: Impact">Product</h5></div>
+          </th>
+          <th scope="col" class="border-0 bg-light">
+            <div class="py-2 text-uppercase" style="position:relative; right: -50px;"><h5
+              style="font-family: Impact">Price/Unit</h5></div>
+          </th>
+          <th scope="col" class="border-0 bg-light">
+            <div class="py-2 text-uppercase"><h5 style="font-family: Impact">Add/Remove</h5></div>
+          </th>
+          <th scope="col" class="border-0 bg-light">
+            <div class="p-2 px-3 text-uppercase"><h5 style="font-family: Impact">Amount</h5></div>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+          
+      </table>
+    </div>
+    </div>
+    </div>
+    </div>
+ 
+  

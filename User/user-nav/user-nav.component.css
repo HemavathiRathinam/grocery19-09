@@ -1,0 +1,8 @@
+/* nav */
+li a:hover{
+    background-color: gray;
+    color: #FFFFFF;
+  }
+#logout{
+margin-left: 500px;
+}  
